@@ -49,25 +49,26 @@
         </div>
     </div>
     <div class="container">
+        <h:form id="save_employee">
         <div class="row">
             <p style="padding-top: 60px;"></p>
 
             <div>
-                <h:form>
+
                     <div class="col-xs-4">
                         <h:outputLabel value="#{bundle.add_first_name}"></h:outputLabel>
-                        <h:inputText id="first_name" class="required form-control" placeholder="Text input"
+                        <h:inputText id="first_name" class="required form-control" value="#{employee.firstName}"
                                      required="true" requiredMessage="dupa kurwa"></h:inputText>
 
                         <h:outputLabel value="#{bundle.add_last_name}"></h:outputLabel>
-                        <h:inputText id="last_name" class="required form-control" placeholder="#{bundle.add_last_name}"
+                        <h:inputText id="last_name" class="required form-control" value="#{employee.lastName}"
                                      required="true" requiredMessage="dupa kurwa"></h:inputText>
 
                         <h:outputLabel value="#{bundle.add_pesel}"></h:outputLabel>
-                        <h:inputText id="pesel" class="required form-control" placeholder="#{bundle.add_pesel}"
+                        <h:inputText id="pesel" class="required form-control" value="#{employee.pesel}"
                                      required="true" requiredMessage="dupa kurwa"></h:inputText>
                         <h:outputLabel value="#{bundle.add_city}"></h:outputLabel>
-                        <h:inputText id="city" class="required form-control" placeholder="#{bundle.add_city}"
+                        <h:inputText id="city" class="required form-control" value="#{employee.city}"
                                      required="true" requiredMessage="dupa kurwa"></h:inputText>
                     </div>
                     <div class="col-xs-5">
@@ -84,27 +85,29 @@
                             </ul>
                         </div>
                         <div>
-                            <h:outputLabel value="#{bundle.add_date_start}"></h:outputLabel>
+                            <h:outputLabel for="date_start" value="#{bundle.add_date_start}"/>
                             <h:inputText id="date_start" class="required form-control"
-                                         placeholder="#{bundle.date_start}"
-                                         required="true" requiredMessage="dupa kurwa"></h:inputText>
+                                         value="#{employee.dateStart}"
+                                         required="true" requiredMessage="dupa kurwa"/>
                         </div>
                         <div>
-                            <h:outputLabel value="#{bundle.add_salary}"></h:outputLabel>
-                            <h:inputText id="salary" class="required form-control" placeholder="#{bundle.add_salary}"
-                                         required="true" requiredMessage="dupa kurwa"></h:inputText>
+                            <h:outputLabel for="salary" value="#{bundle.add_salary}">
+                            <h:inputText id="salary" class="required form-control" value="#{employee.salary}"
+                                         required="true" requiredMessage="dupa kurwa"/></h:outputLabel>
                         </div>
                     </div>
-                </h:form>
+
+
             </div>
         </div>
-        <p style="padding-top: 60px;"></p>
-
         <div class="row">
             <div class="col-xs-1">
-                <button type="button" class="btn btn-success">Zapisz</button>
+<p></p><p></p><p></p>
+                <h:commandButton class="btn btn-success" action="#{employee.Save}" value="zapisz"></h:commandButton>
             </div>
+            <div class="alert alert-danger" role="alert" style="#{employee.validator.firstNameValid}">dafug?</div>
         </div>
+    </h:form>
     </div>
     <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js" type="text/javascript"></script>
