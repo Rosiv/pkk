@@ -1,23 +1,21 @@
 /**
  * Created by pr on 15.07.14.
  */
+
 import javax.faces.bean.ApplicationScoped;
 import javax.faces.bean.ManagedBean;
-import javax.faces.bean.SessionScoped;
 import java.io.FileNotFoundException;
-import java.io.PrintWriter;
 import java.io.UnsupportedEncodingException;
 
 @ManagedBean
 @ApplicationScoped
 public class Employee {
 
-    private String firstName="john", lastName,pesel, jobPosition, city, dateStart, salary;
-    private EmployeeValidator validator = new EmployeeValidator(this);
+    private String firstName,lastName, pesel, jobPosition, city, dateStart, salary;
+    private EmployeeValidator validator;
 
-    public Employee()
-    {
-        this.salary = "1000";
+    public Employee() {
+        this.validator = new EmployeeValidator(this);
     }
 
     public String getFirstName() {
@@ -77,9 +75,13 @@ public class Employee {
     }
 
     public void Save() throws FileNotFoundException, UnsupportedEncodingException {
-        int foo = Integer.parseInt(this.salary);
-        foo++;
-        this.salary = Integer.toString(foo);
+        if(this.validator.isEmployeeValid())        {
+            SaveToDB();
+        }
+    }
+
+    private void SaveToDB() {
+        
     }
 
     public EmployeeValidator getValidator() {
