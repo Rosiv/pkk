@@ -2,6 +2,8 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
+      <module fileurl="file://$PROJECT_DIR$/eclipseLink/eclipseLink.iml" filepath="$PROJECT_DIR$/eclipseLink/eclipseLink.iml" />
+      <module fileurl="file://$PROJECT_DIR$/enterpriseJavaBeans/enterpriseJavaBeans.iml" filepath="$PROJECT_DIR$/enterpriseJavaBeans/enterpriseJavaBeans.iml" />
       <module fileurl="file://$PROJECT_DIR$/programowanie_komponentowe.iml" filepath="$PROJECT_DIR$/programowanie_komponentowe.iml" />
     </modules>
   </component>

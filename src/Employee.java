@@ -2,13 +2,13 @@
  * Created by pr on 15.07.14.
  */
 
-import javax.faces.bean.ApplicationScoped;
 import javax.faces.bean.ManagedBean;
+import javax.faces.bean.RequestScoped;
 import java.io.FileNotFoundException;
 import java.io.UnsupportedEncodingException;
 
 @ManagedBean
-@ApplicationScoped
+@RequestScoped
 public class Employee {
 
     private String firstName,lastName, pesel, jobPosition, city, dateStart, salary;
@@ -81,7 +81,9 @@ public class Employee {
     }
 
     private void SaveToDB() {
-        
+        SimpleDatabase db = new SimpleDatabase();
+        db.Save(this);
+        this.salary = Integer.toString(db.count());
     }
 
     public EmployeeValidator getValidator() {

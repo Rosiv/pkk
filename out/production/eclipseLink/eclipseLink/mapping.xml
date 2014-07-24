@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<entity-mappings xmlns="http://java.sun.com/xml/ns/persistence/orm"
+        version="2.0">
+
+    <entity class="eclipseLink.EmployeesEntity">
+        <table name="EMPLOYEES" schema="APP" catalog=""/>
+        <attributes>
+            <id name="pesel">
+                <column name="PESEL" nullable="false" length="11"/>
+            </id>
+            <basic name="firstname">
+                <column name="FIRSTNAME" nullable="false" length="15"/>
+            </basic>
+            <basic name="lastname">
+                <column name="LASTNAME" nullable="false" length="20"/>
+            </basic>
+            <basic name="city">
+                <column name="CITY" nullable="false" length="15"/>
+            </basic>
+            <basic name="jobposition">
+                <column name="JOBPOSITION" nullable="false" length="15"/>
+            </basic>
+            <basic name="salary">
+                <column name="SALARY" nullable="false" precision="5"/>
+            </basic>
+        </attributes>
+    </entity>
+</entity-mappings>
