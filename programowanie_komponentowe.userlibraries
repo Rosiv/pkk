@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<eclipse-userlibraries>
+  <library name="Hibernate 4.2.2-4.2.2" />
+  <library name="ejb-3.2" />
+  <library name="JPA 2.0-2.0">
+    <archive path="/home/pr/IdeaProjects/programowanie_komponentowe/web/WEB-INF/lib/javax.persistence.jar" />
+  </library>
+</eclipse-userlibraries>
+

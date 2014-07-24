@@ -13,9 +13,12 @@ public class Employee {
 
     private String firstName,lastName, pesel, jobPosition, city, dateStart, salary;
     private EmployeeValidator validator;
+    private SimpleDatabase db = new SimpleDatabase();
+    public boolean init = true;
 
     public Employee() {
         this.validator = new EmployeeValidator(this);
+        this.salary = Integer.toString(db.count());
     }
 
     public String getFirstName() {
@@ -75,13 +78,17 @@ public class Employee {
     }
 
     public void Save() throws FileNotFoundException, UnsupportedEncodingException {
-        if(this.validator.isEmployeeValid())        {
+        this.init = false;
+       // if(this.validator.isEmployeeValid())        {
+
             SaveToDB();
-        }
+        //}
     }
 
     private void SaveToDB() {
-        
+
+                this.db.Save(this);
+                this.salary = Integer.toString(db.count());
     }
 
     public EmployeeValidator getValidator() {
